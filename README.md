@@ -59,14 +59,14 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   Open another new terminal, edit `ROCKET_PORT` in `.env` to `8003`, then execute `cargo run`.
 
 ## Mandatory Checklists (Subscriber)
--   [ ] Clone https://gitlab.com/ichlaffterlalu/bambangshop-receiver to a new repository.
+-   [X] Clone https://gitlab.com/ichlaffterlalu/bambangshop-receiver to a new repository.
 -   **STAGE 1: Implement models and repositories**
-    -   [ ] Commit: `Create Notification model struct.`
-    -   [ ] Commit: `Create SubscriberRequest model struct.`
-    -   [ ] Commit: `Create Notification database and Notification repository struct skeleton.`
-    -   [ ] Commit: `Implement add function in Notification repository.`
-    -   [ ] Commit: `Implement list_all_as_string function in Notification repository.`
-    -   [ ] Write answers of your learning module's "Reflection Subscriber-1" questions in this README.
+    -   [X] Commit: `Create Notification model struct.`
+    -   [X] Commit: `Create SubscriberRequest model struct.`
+    -   [X] Commit: `Create Notification database and Notification repository struct skeleton.`
+    -   [X] Commit: `Implement add function in Notification repository.`
+    -   [X] Commit: `Implement list_all_as_string function in Notification repository.`
+    -   [X] Write answers of your learning module's "Reflection Subscriber-1" questions in this README.
 -   **STAGE 3: Implement services and controllers**
     -   [ ] Commit: `Create Notification service struct skeleton.`
     -   [ ] Commit: `Implement subscribe function in Notification service.`
@@ -85,5 +85,8 @@ This is the place for you to write reflections:
 ### Mandatory (Subscriber) Reflections
 
 #### Reflection Subscriber-1
+1. From what I understand, RwLock helps prevent deadlocks by allowing multiple threads to acquire read locks simultaneously, the add in NotificationRepository technically 'writes', appending a new notification to the Vec, and the list_all 'reads' the notifications in the vector so with RwLock, multiple threads can 'read' the vector concurrently, but the 'write' operations are exclusive.
+
+2. So from what I've learned and from what I've searched on Google, it is to provide a safe concurrency so that there will be no data races, allowing the mutation of a static variable could cause data races and cause concurrency issues, as multiple threads can mutate the static var simultaneously, other than data races, this could also lead to an 'undefined' behaviour
 
 #### Reflection Subscriber-2
